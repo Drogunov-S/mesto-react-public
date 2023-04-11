@@ -67,3 +67,7 @@
 @import url('./blocks/preview/preview.css');
 @import url('./blocks/preview/__image/preview__image.css');
 @import url('./blocks/preview/__caption/preview__caption.css');
+
+body {
+    background-color: #000000;
+}

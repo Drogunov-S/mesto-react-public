@@ -1,8 +1,8 @@
 
-function Header(props) {
+function Header({logo}) {
     return (
         <header className="header page__header">
-            <img src={props.logo} alt="Логотип" className="header__logo"/>
+            <img src={logo} alt="Логотип" className="header__logo"/>
         </header>
     );
 }

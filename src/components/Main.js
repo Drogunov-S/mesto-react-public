@@ -48,6 +48,7 @@ function Main({onEditAvatar, onEditProfile, onAddPlace, onCardClick}) {
                 {
                     cards.map(card => (
                         <Card
+                            key={card.id}
                             card={card}
                             onCardClick={
                                 () => onCardClick(card)

@@ -1,10 +1,10 @@
 import React from 'react';
 
-function Card({card, onCardClick, key}) {
+function Card({card, onCardClick}) {
 
 
     return (
-        <article className="card" key={key}>
+            <article className="card">
             <img className="card__image" src={card.link} alt={card.name}
                  onClick={onCardClick}
             />

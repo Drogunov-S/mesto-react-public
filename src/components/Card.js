@@ -4,7 +4,7 @@ function Card({card, onCardClick}) {
 
 
     return (
-            <article className="card">
+        <article className="card">
             <img className="card__image" src={card.link} alt={card.name}
                  onClick={onCardClick}
             />

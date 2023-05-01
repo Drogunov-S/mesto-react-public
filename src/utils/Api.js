@@ -6,10 +6,6 @@ class Api {
         this._baseUrl = baseUrl;
     }
 
-    _request(url, options) {
-        return fetch(url, options).then(this._checkResponse);
-    }
-
     getUserInfo() {
         return this._request(`${this._baseUrl}/users/me`, {
             method: "GET",
@@ -66,6 +62,10 @@ class Api {
             method: "DELETE",
             headers: this._headers
         });
+    }
+
+    _request(url, options) {
+        return fetch(url, options).then(this._checkResponse);
     }
 
     _checkResponse(response) {

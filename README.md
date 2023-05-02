@@ -1,5 +1,5 @@
-# [Mesto React App](https://drogunov-s.github.io/mesto-react/)
-[GitHub pages](https://drogunov-s.github.io/mesto-react/)
+# [Mesto React App](https://drogunov-s.github.io/mesto-react-public/)
+[GitHub pages](https://drogunov-s.github.io/mesto-react-public/)
 
 ## Описание проекта
 

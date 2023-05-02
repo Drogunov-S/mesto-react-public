@@ -30,7 +30,7 @@ function EditProfilePopup({isOpen, onClose, onUpdateUser}) {
     React.useEffect(() => {
         setUserName(userContext.name);
         setDescription(userContext.about)
-    }, [userContext]);
+    }, [userContext, isOpen]);
 
     return (
         <PopupWithForm

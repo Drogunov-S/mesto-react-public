@@ -77,8 +77,8 @@ function App() {
     function handleCardLikeClick(card) {
         const isLiked = card.likes.some((like) => like._id === currentUser._id);
         const changeLike = isLiked
-            ? api.unlikeCard(card._id)
-            : api.likeCard(card._id);
+            ? api.unlikeCard(card._id).catch(console.log)
+            : api.likeCard(card._id).catch(console.log);
         changeLike.then((updatedCard) => {
             setCards((cards) =>
                 cards.map((viewCard) =>
@@ -119,8 +119,8 @@ function App() {
     function handleSubmit(card) {
         api.postCard(card)
             .then(cardsUpdated => {
-                setCards(cardsUpdated);
-                closeAllPopups();
+                setCards([cardsUpdated, ...cards]);
+                // closeAllPopups();
             })
             .catch(console.log);
     }

@@ -3,18 +3,21 @@ import PopupWithForm from "./PopupWithForm";
 
 function AddPlacePopup({isOpen, onClose, onSubmit}) {
 
-    const [newCard, setCard] = React.useState({name: '', link: ''})
+    const [newCard, setCard] = React.useState({name: '', link: ''});
 
     function handleChange(evt) {
-        evt.preventDefault();
-
-        const name = evt.target.name;
-        newCard[name] = evt.target.value;
-        setCard(newCard);
+        setCard({
+            ...newCard,
+            [evt.target.name]: evt.target.value
+        });
     }
 
-
-    function handleAddPlaceSubmit() {
+    function handleAddPlaceSubmit(evt) {
+        evt.preventDefault();
+        setCard({
+            name: '',
+            link: ''
+        })
         onSubmit(newCard);
     }
 
@@ -39,6 +42,7 @@ function AddPlacePopup({isOpen, onClose, onSubmit}) {
                        maxLength="30"
                        required
                        onChange={handleChange}
+                       value={newCard.name}
                 />
                 <span className="data-form__input-error data-form__input-error_type_name"/>
             </label>
@@ -51,6 +55,7 @@ function AddPlacePopup({isOpen, onClose, onSubmit}) {
                        placeholder="Ссылка на картинку"
                        required
                        onChange={handleChange}
+                       value={newCard.link}
                 />
                 <span className="data-form__input-error data-form__input-error_type_link"/>
             </label>

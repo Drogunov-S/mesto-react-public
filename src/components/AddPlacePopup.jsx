@@ -12,13 +12,16 @@ function AddPlacePopup({isOpen, onClose, onSubmit}) {
         });
     }
 
-    function handleAddPlaceSubmit(evt) {
-        evt.preventDefault();
-        onSubmit(newCard);
+    React.useEffect(() => {
         setCard({
             name: '',
             link: ''
         })
+    }, [isOpen]);
+
+    function handleAddPlaceSubmit(evt) {
+        evt.preventDefault();
+        onSubmit(newCard);
     }
 
 

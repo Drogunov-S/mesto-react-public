@@ -120,7 +120,7 @@ function App() {
         api.postCard(card)
             .then(cardsUpdated => {
                 setCards([cardsUpdated, ...cards]);
-                // closeAllPopups();
+                closeAllPopups();
             })
             .catch(console.log);
     }

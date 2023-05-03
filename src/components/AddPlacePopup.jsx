@@ -14,11 +14,11 @@ function AddPlacePopup({isOpen, onClose, onSubmit}) {
 
     function handleAddPlaceSubmit(evt) {
         evt.preventDefault();
+        onSubmit(newCard);
         setCard({
             name: '',
             link: ''
         })
-        onSubmit(newCard);
     }
 
 
